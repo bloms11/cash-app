@@ -38,17 +38,27 @@
 
       <!-- navbar -->
 
-      <div
-        class="flex w-[90%] items-center md:w-[85%] mx-auto justify-between p-2"
-      >
-        <img class="w-[140px] md:w-auto" src="assets/logo.png" />
-        <div class="flex items-center gap-x-8">
-          <button
-            class="bg-white hidden text-[#161616] md:flex rounded-[4px] px-8 py-3 font-[500]"
+      <div class="flex flex-col w-[100%] mx-auto">
+        <div
+          class="flex w-[90%] md:w-[85%] mx-auto items-center justify-between p-2"
+        >
+          <img class="w-[140px] md:w-auto" src="assets/logo.png" />
+          <div class="flex items-center gap-x-8">
+            <button
+              class="bg-white hidden md:flex rounded-[4px] px-8 py-3 font-[500]"
+            >
+              Login
+            </button>
+            <i class="fa-solid fa-bars" id="burger-menu"></i>
+          </div>
+        </div>
+        <div class="hidden md:block py-4 w-full bg-white" id="mobile-menu">
+          <div
+            class="flex flex-col space-y-2 w-[90%] bg-transparent md:w-[85%] mx-auto"
           >
-            Login
-          </button>
-          <i class="fa-solid fa-bars"></i>
+            <p class="text-[#161616] font-[500]">About Us</p>
+            <p class="text-[#161616] font-[500]">Contact Us</p>
+          </div>
         </div>
       </div>
       <!-- navbar end -->
@@ -327,6 +337,13 @@
       </div>
     </div>
     <!-- Footer  -->
-    <script src="script.js"></script>
+    <script>
+      const burgerMenu = document.getElementById("burger-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      burgerMenu.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
